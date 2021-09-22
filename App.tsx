@@ -35,7 +35,10 @@ export default function App() {
       <NavigationContainer>
         <AppRoutes />
       </NavigationContainer>
-      <StatusBar style="light" />
+      <StatusBar 
+        backgroundColor={theme.colors.primary} 
+        translucent style="light" 
+      />
     </ThemeProvider>
   );
 }
