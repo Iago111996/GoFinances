@@ -123,7 +123,7 @@ export const Resume = ({}: ResumeProps) => {
 
   useFocusEffect(useCallback(() => {
     loadData();
-  },[]));
+  },[selectedDate]));
 
   return (
     <Container>
