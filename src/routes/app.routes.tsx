@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Dashboard } from '../screens/Dashboard';
 import { Register } from  '../screens/Register';
+import { Resume } from '../screens/Resume';
 
 export type RootBottomTabParamList = {
   Listagem: undefined;
@@ -22,6 +23,7 @@ export const AppRoutes = ({}: AppRoutesProps) => {
 
   return (
     <Navigator
+    initialRouteName="Resumo"
     screenOptions={{
       tabBarActiveTintColor: theme.colors.secondary,
       tabBarInactiveTintColor: theme.colors.text,
@@ -63,7 +65,7 @@ export const AppRoutes = ({}: AppRoutesProps) => {
 
       <Screen 
         name="Resumo"
-        component={Register}
+        component={Resume}
         options= {{
           tabBarIcon: (({ size, color}) => (
             <MaterialIcons
