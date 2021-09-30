@@ -7,11 +7,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Dashboard } from '../screens/Dashboard';
 import { Register } from  '../screens/Register';
 import { Resume } from '../screens/Resume';
+import { SignIn } from '../screens/SignIn';
 
 export type RootBottomTabParamList = {
   Listagem: undefined;
   Cadastrar: undefined;
   Resumo: undefined;
+  Splash: undefined;
 };
 
 const { Navigator, Screen } = createBottomTabNavigator<RootBottomTabParamList>();
@@ -23,7 +25,7 @@ export const AppRoutes = ({}: AppRoutesProps) => {
 
   return (
     <Navigator
-    initialRouteName="Resumo"
+    initialRouteName="Splash"
     screenOptions={{
       tabBarActiveTintColor: theme.colors.secondary,
       tabBarInactiveTintColor: theme.colors.text,
@@ -70,6 +72,20 @@ export const AppRoutes = ({}: AppRoutesProps) => {
           tabBarIcon: (({ size, color}) => (
             <MaterialIcons
               name="pie-chart"
+              size={size}
+              color={color}
+            />
+          )),
+        }}
+      />
+
+      <Screen 
+        name="Splash"
+        component={SignIn}
+        options= {{
+          tabBarIcon: (({ size, color}) => (
+            <MaterialIcons
+              name="attach-money"
               size={size}
               color={color}
             />
