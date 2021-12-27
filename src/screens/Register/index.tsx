@@ -31,6 +31,7 @@ import { Button } from '../../components/Form/Button';
 import { TransactionTypeButton } from '../../components/Form/TransactionTypeButton';
 import { CategorySelect } from '../../components/Form/CategorySelect';
 import { ModalCategorySelect } from '../ModalCategorySelect';
+import { string } from 'yup/lib/locale';
 
 type registerScreenProp = BottomTabNavigationProp<RootBottomTabParamList, 'Listagem'>;
 
@@ -41,7 +42,7 @@ interface FormData {
   amount: string;
 }
 
-const schema = Yup.object().shape({
+const schema = (t: string) => Yup.object().shape({
   name: Yup
     .string()
     .required('Nome é obrigatório'),
@@ -69,8 +70,8 @@ export const Register: React.FC = ({}: RegisterProps) => {
     reset,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
-  })
+    resolver: yupResolver(schema("g")),
+  });
 
   const handleTransactionTypeSelect = ( type: 'positive' | 'negative' ) => {
     setTransactionType(type);
@@ -113,7 +114,7 @@ export const Register: React.FC = ({}: RegisterProps) => {
       await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
 
       reset();
-      setTransactionType('');
+      setTransactionType(''); 
       setCategory({
         key: 'category',
         name: 'Categoria',

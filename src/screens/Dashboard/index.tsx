@@ -197,7 +197,7 @@ export const Dashboard = () => {
             keyExtractor={item => item.id}
             renderItem={({ item }) => <TransactionCard data={item}/>}
             contentContainerStyle={{
-              paddingBottom: getBottomSpace()
+              paddingBottom: getBottomSpace()            
             }}
           />
         </Transactions>

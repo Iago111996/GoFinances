@@ -31,7 +31,10 @@ export const TransactionTypeButton = ({
       type={type} 
     >
       <Button {...rest}>
-        <Icon name={icon[type]} type={type} />
+        <Icon 
+          name={icon[type]} 
+          type={type} 
+        />
 
         <Title>{ title }</Title>
       </Button>

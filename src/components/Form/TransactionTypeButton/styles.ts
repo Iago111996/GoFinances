@@ -19,7 +19,7 @@ export const Container = styled.View<ContainerProps>`
     background-color: ${({ theme }) => theme.colors.success_light}
   `}
   ${({ isActive, type }) => isActive && type === 'down' && css`
-  background-color: ${({ theme }) => theme.colors.attention_light}
+    background-color: ${({ theme }) => theme.colors.attention_light}
   `}
 
   border-width: ${({ isActive }) => isActive ? 0 : 1.5}px;
@@ -34,8 +34,6 @@ export const Button = styled(RectButton)`
   align-items: center;
 
   padding: 16px 18px;
-
-
 `;
 
 export const Icon = styled(Feather)<IconProps>`
