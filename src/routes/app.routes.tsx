@@ -25,7 +25,7 @@ export const AppRoutes = ({}: AppRoutesProps) => {
 
   return (
     <Navigator
-    initialRouteName="Splash"
+    initialRouteName="Cadastrar"
     screenOptions={{
       tabBarActiveTintColor: theme.colors.secondary,
       tabBarInactiveTintColor: theme.colors.text,
